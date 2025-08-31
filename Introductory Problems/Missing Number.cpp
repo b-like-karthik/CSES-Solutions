@@ -72,18 +72,19 @@ int lcm(int x,int y){
 #define ub upper_bound
 #define vpi vector<pair<int,int>>
 #define pi pair<int,int>
+
+
 int n,m,k,x,y;
 
 
 void solve(){
     cin>>n;
-    while(n!=1){
-        cout<<n<<" ";
-        if(n&1) n = 3*n+1;
-        else n/=2;
+    int sum = 0;
+    rep(i,0,n-1) {
+        cin>>x;
+        sum+=x;
     }
-
-    cout<<1<<endl;
+    cout<<((n*(n+1))/2) - sum<<endl;
 }
 
 

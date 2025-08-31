@@ -72,18 +72,28 @@ int lcm(int x,int y){
 #define ub upper_bound
 #define vpi vector<pair<int,int>>
 #define pi pair<int,int>
+
+
 int n,m,k,x,y;
 
 
 void solve(){
-    cin>>n;
-    while(n!=1){
-        cout<<n<<" ";
-        if(n&1) n = 3*n+1;
-        else n/=2;
-    }
+    string s;
+    cin>>s;
+    n = s.size();
 
-    cout<<1<<endl;
+    char last = s[0];
+    int ans = 1, mx = 1;
+    rep(i,1,n){
+        if(s[i]==last){
+            mx++;
+        }else {
+            last = s[i];
+            mx = 1;
+        }
+        ans = max(ans,mx);
+    }
+    cout<<ans<<endl;
 }
 
 
